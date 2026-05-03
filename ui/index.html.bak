@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zsistant — Assistant Platform</title>
+<link rel="stylesheet" href="/ui/app.css">
+</head>
+<body class="dark">
+<div id="app">
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-header"><span class="brand">Zsistant</span></div>
+    <nav class="nav">
+      <button class="nav-item active" data-view="home"><span>Dashboard</span></button>
+      <button class="nav-item" data-view="assistants"><span>Assistants</span><span id="navAssCount" class="badge"></span></button>
+      <button class="nav-item" data-view="jobs"><span>Jobs</span></button>
+      <button class="nav-item" data-view="channels"><span>Channels</span></button>
+      <button class="nav-item" data-view="tools"><span>Tools</span></button>
+      <button class="nav-item" data-view="settings"><span>Settings</span></button>
+    </nav>
+    <div class="sidebar-footer"><button id="devModeToggle" class="dev-toggle">Developer Mode: OFF</button></div>
+  </aside>
+  <main id="main" class="main">
+    <div id="view-home" class="view active">
+      <header class="page-header"><h1>Dashboard</h1><p class="subhead">Your AI workforce at a glance.</p></header>
+      <div class="dashboard-grid">
+        <div class="dash-card" id="dashAssistantsCard"></div>
+        <div class="dash-card" id="dashChannelsCard"></div>
+        <div class="dash-card" id="dashJobsCard"></div>
+        <div class="dash-card" id="dashActivityCard"></div>
+      </div>
+    </div>
+    <div id="view-assistants" class="view">
+      <header class="page-header"><h1>Assistants</h1><button id="createAssistantBtn" class="primary-btn">+ Create Assistant</button></header>
+      <div id="assistantGrid" class="assistant-grid"></div>
+    </div>
+    <div id="view-assistant-detail" class="view">
+      <header class="detail-header"><button id="backBtn" class="back-btn">&larr; Back</button><h2 id="detailTitle">Assistant</h2><span id="detailStatus" class="status-badge"></span></header>
+      <nav class="tabs" id="detailTabs"></nav>
+      <div id="detailPanels"></div>
+    </div>
+    <div id="view-jobs" class="view">
+      <header class="page-header"><h1>Jobs</h1><p class="subhead">Scheduled and running tasks.</p></header>
+      <div id="globalJobsList" class="panel-content"></div>
+    </div>
+    <div id="view-channels" class="view">
+      <header class="page-header"><h1>Channels</h1><p class="subhead">Communication surfaces.</p></header>
+      <div id="channelsList" class="panel-content"></div>
+    </div>
+    <div id="view-tools" class="view">
+      <header class="page-header"><h1>Tools</h1><p class="subhead">Capabilities available to your assistants.</p></header>
+      <div id="toolsList" class="panel-content"></div>
+    </div>
+    <div id="view-settings" class="view">
+      <header class="page-header"><h1>Settings</h1></header>
+      <div class="settings-body">
+        <section class="setting-group"><h3>Appearance</h3><label>Theme</label><select id="themeSelect"><option value="dark">Dark</option><option value="light">Light</option></select></section>
+        <section class="setting-group"><h3>Developer Mode</h3><label class="toggle-row"><input type="checkbox" id="devModeCheckbox"><span>Enable Developer Mode (shows raw traces, provider diagnostics, tool calls)</span></label></section>
+        <section class="setting-group"><h3>Default Model</h3><select id="defaultModelSelect"><option value="">Choose default model...</option></select></section>
+        <section class="setting-group"><h3>API Keys</h3><div id="providerKeysList"></div><button id="saveProviderKeysBtn" class="primary-btn">Save Provider Keys</button><p class="hint">Keys are stored locally. Set via env vars too (e.g. OPENAI_API_KEY, ANTHROPIC_API_KEY).</p></section>
+        <section class="setting-group"><h3>System Diagnostics</h3><div id="systemDiagnostics"></div><button id="reloadProvidersBtn" class="primary-btn">Reload Provider Status</button></section>
+      </div>
+    </div>
+  </main>
+  <dialog id="createAssistantDialog" class="modal">
+    <div class="modal-content">
+      <div class="modal-header"><h2>Create Assistant</h2><button id="closeCreateDialog" class="close-btn">&times;</button></div>
+      <div class="modal-body" id="createAssistantBody"></div>
+      <div class="modal-footer"><button id="cancelAssistantBtn" class="cancel-btn">Cancel</button><button id="saveAssistantBtn" class="primary-btn">Create</button></div>
+    </div>
+  </dialog>
+</div>
+<script src="/ui/app.js"></script>
+</body>
+</html>

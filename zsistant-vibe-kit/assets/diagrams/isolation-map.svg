@@ -1,0 +1,18 @@
+<svg width="1400" height="820" viewBox="0 0 1400 820" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agent isolation map">
+  <rect width="1400" height="820" fill="#020617"/>
+  <text x="70" y="80" fill="#f8fafc" font-family="Arial" font-size="44" font-weight="800">Isolation by Default</text>
+  <g font-family="Arial">
+    <rect x="90" y="150" width="350" height="520" rx="32" fill="#0f172a" stroke="#67e8f9"/>
+    <rect x="525" y="150" width="350" height="520" rx="32" fill="#0f172a" stroke="#a78bfa"/>
+    <rect x="960" y="150" width="350" height="520" rx="32" fill="#0f172a" stroke="#67e8f9"/>
+    <text x="130" y="220" fill="#67e8f9" font-size="32" font-weight="800">Agent A</text>
+    <text x="565" y="220" fill="#a78bfa" font-size="32" font-weight="800">Agent B</text>
+    <text x="1000" y="220" fill="#67e8f9" font-size="32" font-weight="800">Agent C</text>
+    <text x="130" y="290" fill="#cbd5e1" font-size="24">workspace/</text><text x="130" y="335" fill="#cbd5e1" font-size="24">persona.md</text><text x="130" y="380" fill="#cbd5e1" font-size="24">jobs/</text><text x="130" y="425" fill="#cbd5e1" font-size="24">audit.jsonl</text>
+    <text x="565" y="290" fill="#cbd5e1" font-size="24">workspace/</text><text x="565" y="335" fill="#cbd5e1" font-size="24">persona.md</text><text x="565" y="380" fill="#cbd5e1" font-size="24">jobs/</text><text x="565" y="425" fill="#cbd5e1" font-size="24">audit.jsonl</text>
+    <text x="1000" y="290" fill="#cbd5e1" font-size="24">workspace/</text><text x="1000" y="335" fill="#cbd5e1" font-size="24">persona.md</text><text x="1000" y="380" fill="#cbd5e1" font-size="24">jobs/</text><text x="1000" y="425" fill="#cbd5e1" font-size="24">audit.jsonl</text>
+    <text x="480" y="735" fill="#fca5a5" font-size="26" font-weight="700">No cross-agent reads or chatter unless ACL allows it</text>
+  </g>
+  <line x1="440" y1="410" x2="525" y2="410" stroke="#ef4444" stroke-width="8" stroke-dasharray="18 14"/>
+  <line x1="875" y1="410" x2="960" y2="410" stroke="#ef4444" stroke-width="8" stroke-dasharray="18 14"/>
+</svg>

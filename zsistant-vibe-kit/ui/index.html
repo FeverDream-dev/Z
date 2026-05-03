@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zsistant</title>
+<link rel="stylesheet" href="/ui/app.css">
+</head>
+<body>
+<div id="app">
+  <!-- Sidebar -->
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <img src="/assets/brand/zsistant-icon.png" alt="" class="logo">
+      <span class="brand">Zsistant</span>
+      <button id="sidebarToggle" class="icon-btn" title="Toggle sidebar">&#9776;</button>
+    </div>
+    <div class="sidebar-search">
+      <input type="search" id="searchInput" placeholder="Search conversations..." autocomplete="off">
+    </div>
+    <div class="agents-section">
+      <div class="agents-header">
+        <span class="agents-title">Agents</span>
+        <button id="showCreateAgent" class="agents-add-btn" title="Create agent">+</button>
+      </div>
+      <div id="agentList" class="agent-list"></div>
+      <div id="createAgentForm" class="create-agent-form hidden">
+        <input type="text" id="agentFormId" placeholder="ID" autocomplete="off">
+        <input type="text" id="agentFormName" placeholder="Name" autocomplete="off">
+        <input type="text" id="agentFormRole" placeholder="Role" autocomplete="off">
+        <div class="create-agent-actions">
+          <button id="createAgentSave" class="primary-btn">Save</button>
+          <button id="createAgentCancel" class="cancel-btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <button id="newChatBtn" class="new-chat-btn">+ New chat</button>
+    <nav id="conversationList" class="conversation-list">
+      <!-- Populated by JS -->
+    </nav>
+    <div class="sidebar-footer">
+      <button id="settingsBtn" class="sidebar-action">&#9881; Settings</button>
+      <button id="devModeBtn" class="sidebar-action dev-toggle">Developer Mode</button>
+    </div>
+  </aside>
+
+  <!-- Main Chat Area -->
+  <main class="main">
+    <!-- Top bar -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <h2 id="chatTitle">Chat</h2>
+        <span id="providerBadge" class="badge hidden">Provider</span>
+      </div>
+      <div class="topbar-right">
+        <div class="model-picker-wrapper">
+          <input type="search" id="modelSearch" class="model-search" placeholder="Search models..." autocomplete="off">
+          <select id="modelPicker" class="model-picker" title="Select model">
+            <option value="" disabled selected>Model</option>
+          </select>
+        </div>
+        <button id="uploadBtn" class="icon-btn" title="Attach file">&#128206;</button>
+        <button id="clearChatBtn" class="icon-btn" title="Clear chat">&#128465;</button>
+      </div>
+    </header>
+
+    <!-- Messages -->
+    <div id="messages" class="messages">
+      <div class="empty-state">
+        <h3>How can I help you today?</h3>
+        <p>Select a model and start a conversation.</p>
+      </div>
+    </div>
+
+    <!-- Composer -->
+    <div class="composer">
+      <div id="filePreview" class="file-preview hidden"></div>
+      <div class="composer-row">
+        <textarea id="composerInput" rows="1" placeholder="Message Zsistant..." autocomplete="off"></textarea>
+        <button id="sendBtn" class="send-btn" title="Send">&#10148;</button>
+        <button id="stopBtn" class="stop-btn hidden" title="Stop">&#9632;</button>
+      </div>
+      <div class="composer-hint">Shift+Enter for new line</div>
+    </div>
+  </main>
+
+  <!-- Settings Modal -->
+  <dialog id="settingsDialog" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Settings</h2>
+        <button id="closeSettings" class="icon-btn">&times;</button>
+      </div>
+      <div class="settings-tabs">
+        <button class="tab-btn active" data-tab="appearance">Appearance</button>
+        <button class="tab-btn" data-tab="providers">Providers</button>
+        <button class="tab-btn" data-tab="apikeys">API Keys</button>
+        <button class="tab-btn" data-tab="developer">Developer</button>
+        <button class="tab-btn" data-tab="about">About</button>
+      </div>
+      <div class="settings-body">
+        <!-- Appearance -->
+        <div id="tab-appearance" class="tab-panel active">
+          <label>Theme</label>
+          <select id="themeSelect">
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+            <option value="system">System</option>
+          </select>
+          <label>Accent Color</label>
+          <div class="accent-picker">
+            <button data-accent="#58a6ff" class="accent-btn active" style="background:#58a6ff"></button>
+            <button data-accent="#a371f7" class="accent-btn" style="background:#a371f7"></button>
+            <button data-accent="#3fb950" class="accent-btn" style="background:#3fb950"></button>
+            <button data-accent="#f78166" class="accent-btn" style="background:#f78166"></button>
+          </div>
+        </div>
+        <!-- Providers -->
+        <div id="tab-providers" class="tab-panel">
+          <div id="providerList" class="provider-list"></div>
+        </div>
+        <!-- API Keys -->
+        <div id="tab-apikeys" class="tab-panel">
+          <p class="hint">API keys are stored in your local config file (~/.zazi/config.yaml). They never leave this machine.</p>
+          <label>Ollama API Key</label>
+          <input type="password" id="keyOllama" placeholder="Paste key...">
+          <label>OpenAI API Key</label>
+          <input type="password" id="keyOpenAI" placeholder="Paste key...">
+          <label>Z.AI API Key</label>
+          <input type="password" id="keyZAI" placeholder="Paste key...">
+          <label>OpenCode API Key</label>
+          <input type="password" id="keyOpenCode" placeholder="Paste key...">
+          <button id="saveKeysBtn" class="primary-btn">Save Keys</button>
+        </div>
+        <!-- Developer -->
+        <div id="tab-developer" class="tab-panel">
+          <label class="toggle-row">
+            <span>Developer Mode</span>
+            <input type="checkbox" id="devModeToggle">
+          </label>
+          <p class="hint">When enabled, shows raw requests, token usage, provider routing, and streaming events.</p>
+        </div>
+        <!-- About -->
+        <div id="tab-about" class="tab-panel">
+          <p><strong>Zsistant</strong> — Many agents. One light host.</p>
+          <p>Version: <span id="aboutVersion">v0.0.1-dev</span></p>
+          <p>Go module: github.com/FeverDream-dev/zsistant</p>
+          <p>Providers: 52 cataloged, 207 models</p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Developer Inspector Panel -->
+  <div id="inspector" class="inspector hidden">
+    <div class="inspector-header">
+      <h4>Developer Inspector</h4>
+      <button id="closeInspector" class="icon-btn">&times;</button>
+    </div>
+    <div class="inspector-tabs">
+      <button class="ins-tab active" data-ins="request">Request</button>
+      <button class="ins-tab" data-ins="events">Events</button>
+      <button class="ins-tab" data-ins="health">Health</button>
+    </div>
+    <div class="inspector-body">
+      <pre id="insRequest" class="ins-panel active"></pre>
+      <pre id="insEvents" class="ins-panel"></pre>
+      <pre id="insHealth" class="ins-panel"></pre>
+    </div>
+  </div>
+</div>
+
+<script src="/ui/app.js"></script>
+</body>
+</html>

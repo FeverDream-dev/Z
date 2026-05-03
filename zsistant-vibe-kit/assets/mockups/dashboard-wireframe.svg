@@ -1,0 +1,30 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Zsistant Dashboard Wireframe">
+<rect width="1200" height="800" fill="#020617"/>
+<rect x="40" y="40" width="1120" height="720" rx="32" fill="#0f172a" stroke="#334155"/>
+<text x="80" y="100" fill="#f8fafc" font-family="Arial" font-size="42" font-weight="800">Zsistant Dashboard Wireframe</text>
+<rect x="80" y="130" width="300" height="210" rx="20" fill="#111827" stroke="#475569"/>
+<text x="104" y="178" fill="#67e8f9" font-family="Arial" font-size="24" font-weight="700">Agent Cards</text>
+<rect x="104" y="214" width="220" height="12" rx="6" fill="#334155"/>
+<rect x="104" y="248" width="185" height="12" rx="6" fill="#334155"/>
+<rect x="104" y="282" width="150" height="12" rx="6" fill="#334155"/>
+<rect x="410" y="130" width="330" height="210" rx="20" fill="#111827" stroke="#475569"/>
+<text x="434" y="178" fill="#67e8f9" font-family="Arial" font-size="24" font-weight="700">Active Jobs</text>
+<rect x="434" y="214" width="250" height="12" rx="6" fill="#334155"/>
+<rect x="434" y="248" width="215" height="12" rx="6" fill="#334155"/>
+<rect x="434" y="282" width="180" height="12" rx="6" fill="#334155"/>
+<rect x="770" y="130" width="330" height="210" rx="20" fill="#111827" stroke="#475569"/>
+<text x="794" y="178" fill="#67e8f9" font-family="Arial" font-size="24" font-weight="700">Provider Health</text>
+<rect x="794" y="214" width="250" height="12" rx="6" fill="#334155"/>
+<rect x="794" y="248" width="215" height="12" rx="6" fill="#334155"/>
+<rect x="794" y="282" width="180" height="12" rx="6" fill="#334155"/>
+<rect x="80" y="380" width="480" height="280" rx="20" fill="#111827" stroke="#475569"/>
+<text x="104" y="428" fill="#67e8f9" font-family="Arial" font-size="24" font-weight="700">Job Timeline</text>
+<rect x="104" y="464" width="400" height="12" rx="6" fill="#334155"/>
+<rect x="104" y="498" width="365" height="12" rx="6" fill="#334155"/>
+<rect x="104" y="532" width="330" height="12" rx="6" fill="#334155"/>
+<rect x="590" y="380" width="510" height="280" rx="20" fill="#111827" stroke="#475569"/>
+<text x="614" y="428" fill="#67e8f9" font-family="Arial" font-size="24" font-weight="700">Approvals Needed</text>
+<rect x="614" y="464" width="430" height="12" rx="6" fill="#334155"/>
+<rect x="614" y="498" width="395" height="12" rx="6" fill="#334155"/>
+<rect x="614" y="532" width="360" height="12" rx="6" fill="#334155"/>
+</svg>

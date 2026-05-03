@@ -1,0 +1,22 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Runtime map">
+  <rect width="1400" height="900" fill="#020617"/>
+  <text x="70" y="80" fill="#f8fafc" font-family="Arial" font-size="44" font-weight="800">Zsistant Runtime Map</text>
+  <g fill="#0f172a" stroke="#475569" stroke-width="2">
+    <rect x="70" y="140" width="260" height="120" rx="22"/><rect x="70" y="300" width="260" height="120" rx="22"/><rect x="70" y="460" width="260" height="120" rx="22"/><rect x="70" y="620" width="260" height="120" rx="22"/>
+    <rect x="470" y="180" width="400" height="500" rx="30"/>
+    <rect x="1040" y="130" width="280" height="130" rx="22"/><rect x="1040" y="310" width="280" height="130" rx="22"/><rect x="1040" y="490" width="280" height="130" rx="22"/><rect x="1040" y="670" width="280" height="130" rx="22"/>
+  </g>
+  <g fill="#67e8f9" font-family="Arial" font-size="28" font-weight="700">
+    <text x="105" y="210">CLI</text><text x="105" y="370">Web UI</text><text x="105" y="530">Telegram</text><text x="105" y="690">Discord / WhatsApp</text>
+    <text x="545" y="245">One lightweight daemon</text>
+    <text x="1080" y="205">Agent A</text><text x="1080" y="385">Agent B</text><text x="1080" y="565">Agent C</text><text x="1080" y="745">Agent N</text>
+  </g>
+  <g fill="#cbd5e1" font-family="Arial" font-size="22">
+    <text x="530" y="310">job queue</text><text x="530" y="360">LLM router</text><text x="530" y="410">tool broker</text><text x="530" y="460">persona trainer</text><text x="530" y="510">inter-agent ACL bus</text><text x="530" y="560">audit/status events</text>
+  </g>
+  <g stroke="#a78bfa" stroke-width="5" fill="none" marker-end="url(#arrow)">
+    <defs><marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#a78bfa"/></marker></defs>
+    <path d="M330 200 C390 200 410 250 470 250"/><path d="M330 360 C390 360 410 340 470 340"/><path d="M330 520 C390 520 410 450 470 450"/><path d="M330 680 C390 680 410 560 470 560"/>
+    <path d="M870 250 C930 250 980 195 1040 195"/><path d="M870 360 C930 360 980 375 1040 375"/><path d="M870 470 C930 470 980 555 1040 555"/><path d="M870 580 C930 580 980 735 1040 735"/>
+  </g>
+</svg>

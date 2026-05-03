@@ -1,0 +1,30 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agent Detail Wireframe">
+<rect width="1200" height="800" fill="#020617"/>
+<rect x="40" y="40" width="1120" height="720" rx="32" fill="#0f172a" stroke="#334155"/>
+<text x="80" y="100" fill="#f8fafc" font-family="Arial" font-size="42" font-weight="800">Agent Detail Wireframe</text>
+<rect x="80" y="130" width="360" height="240" rx="20" fill="#111827" stroke="#475569"/>
+<text x="104" y="178" fill="#67e8f9" font-family="Arial" font-size="24" font-weight="700">Persona Summary</text>
+<rect x="104" y="214" width="280" height="12" rx="6" fill="#334155"/>
+<rect x="104" y="248" width="245" height="12" rx="6" fill="#334155"/>
+<rect x="104" y="282" width="210" height="12" rx="6" fill="#334155"/>
+<rect x="470" y="130" width="300" height="240" rx="20" fill="#111827" stroke="#475569"/>
+<text x="494" y="178" fill="#67e8f9" font-family="Arial" font-size="24" font-weight="700">Channels</text>
+<rect x="494" y="214" width="220" height="12" rx="6" fill="#334155"/>
+<rect x="494" y="248" width="185" height="12" rx="6" fill="#334155"/>
+<rect x="494" y="282" width="150" height="12" rx="6" fill="#334155"/>
+<rect x="800" y="130" width="300" height="240" rx="20" fill="#111827" stroke="#475569"/>
+<text x="824" y="178" fill="#67e8f9" font-family="Arial" font-size="24" font-weight="700">Permissions</text>
+<rect x="824" y="214" width="220" height="12" rx="6" fill="#334155"/>
+<rect x="824" y="248" width="185" height="12" rx="6" fill="#334155"/>
+<rect x="824" y="282" width="150" height="12" rx="6" fill="#334155"/>
+<rect x="80" y="410" width="500" height="250" rx="20" fill="#111827" stroke="#475569"/>
+<text x="104" y="458" fill="#67e8f9" font-family="Arial" font-size="24" font-weight="700">Workspace Summary</text>
+<rect x="104" y="494" width="420" height="12" rx="6" fill="#334155"/>
+<rect x="104" y="528" width="385" height="12" rx="6" fill="#334155"/>
+<rect x="104" y="562" width="350" height="12" rx="6" fill="#334155"/>
+<rect x="610" y="410" width="490" height="250" rx="20" fill="#111827" stroke="#475569"/>
+<text x="634" y="458" fill="#67e8f9" font-family="Arial" font-size="24" font-weight="700">Recent Jobs</text>
+<rect x="634" y="494" width="410" height="12" rx="6" fill="#334155"/>
+<rect x="634" y="528" width="375" height="12" rx="6" fill="#334155"/>
+<rect x="634" y="562" width="340" height="12" rx="6" fill="#334155"/>
+</svg>
